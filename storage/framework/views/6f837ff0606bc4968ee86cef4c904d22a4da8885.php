@@ -1,8 +1,6 @@
-@extends('layouts.admin_layout')
+<?php $__env->startSection('title', 'Main Driver'); ?>
 
-@section('title', 'Главная')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
     <!-- Content Header (Page header) -->
@@ -10,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Главная</h1>
+                    <h1 class="m-0">Drive</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -26,15 +24,15 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-{{--                            <h3>{{ $posts_count }}</h3>--}}
 
-                            <p></p>
+
+                            <p>Pending Orders</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-{{--                        <a href="{{ route('post.index') }}" class="small-box-footer">Все статьи <i--}}
-{{--                                class="fas fa-arrow-circle-right"></i></a>--}}
+
+
                     </div>
                 </div>
                 <!-- ./col -->
@@ -42,15 +40,15 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-{{--                            <h3>{{ $categories_count }}</h3>--}}
 
-                            <p>Категории</p>
+
+                            <p>Number of orders for cooking</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-{{--                        <a href="{{ route('category.index') }}" class="small-box-footer">Все категории <i--}}
-{{--                                class="fas fa-arrow-circle-right"></i></a>--}}
+
+
                     </div>
                 </div>
 
@@ -62,4 +60,6 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.driver_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH N:\OpenServer\domains\pizza_crm\resources\views/driver/home/index.blade.php ENDPATH**/ ?>

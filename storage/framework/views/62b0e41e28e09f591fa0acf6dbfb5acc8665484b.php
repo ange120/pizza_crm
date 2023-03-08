@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Головна сторінка - @yield('title')</title>
+    <title>Головна сторінка - <?php echo $__env->yieldContent('title'); ?></title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -47,7 +47,7 @@
             </li>
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span>{{ Auth::user()->name }}</span>
+                    <span><?php echo e(Auth::user()->name); ?></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
                     <li class="user-footer">
@@ -56,7 +56,7 @@
                             <i class="fa fa-fw fa-power-off"></i>
                             Вихід
                         </a>
-                        <form id="logout-form" action="{{ route('logoutAdmin') }}" method="GET" style="display: none;"></form>
+                        <form id="logout-form" action="<?php echo e(route('logoutAdmin')); ?>" method="GET" style="display: none;"></form>
                     </li>
                 </ul>
             </li>
@@ -65,7 +65,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="{{ route('home') }}" class="brand-link">
+        <a href="<?php echo e(route('home')); ?>" class="brand-link">
             <span class="brand-text font-weight-light">Головна сторінка</span>
         </a>
 
@@ -80,7 +80,7 @@
            with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="{{ route('home') }}" class="nav-link">
+                        <a href="<?php echo e(route('home')); ?>" class="nav-link">
                             <i class="nav-icon fas fa-newspaper"></i>
                             <p>
                                Головна сторінка
@@ -98,7 +98,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ route('listIngredients') }}" class="nav-link">
+                                <a href="<?php echo e(route('listIngredients')); ?>" class="nav-link">
                                     <p>Інгредієнти</p>
                                 </a>
                             </li>
@@ -124,7 +124,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
     </div>
     <!-- /.content-wrapper -->
 
@@ -182,3 +182,4 @@
 </body>
 
 </html>
+<?php /**PATH N:\OpenServer\domains\pizza_crm\resources\views/layouts/admin_layout.blade.php ENDPATH**/ ?>

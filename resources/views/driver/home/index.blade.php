@@ -1,6 +1,6 @@
-@extends('layouts.admin_layout')
+@extends('layouts.driver_layout')
 
-@section('title', 'Главная')
+@section('title', 'Main Driver')
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Главная</h1>
+                    <h1 class="m-0">Drive</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -28,7 +28,7 @@
                         <div class="inner">
 {{--                            <h3>{{ $posts_count }}</h3>--}}
 
-                            <p></p>
+                            <p>Pending Orders</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -44,7 +44,7 @@
                         <div class="inner">
 {{--                            <h3>{{ $categories_count }}</h3>--}}
 
-                            <p>Категории</p>
+                            <p>Number of orders for cooking</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>

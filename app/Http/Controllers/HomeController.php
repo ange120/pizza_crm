@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\DriverHomeController;
 
 class HomeController extends Controller
 {
@@ -19,10 +21,18 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return view('home');
+        $admin = new MainController();
+        $driver = new DriverHomeController();
+
+         if (auth()->user()->hasRole('admin')) {
+            return $admin->index();
+        }
+        return $driver->index();
+
     }
+
 }
